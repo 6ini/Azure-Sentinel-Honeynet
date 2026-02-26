@@ -87,10 +87,7 @@ Analyzing the raw logs further provides proof of the automated nature of these a
 ## Conclusion
 This project demonstrates the critical importance of the Principle of Least Privilege. In a cloud environment, a single misconfiguration can be discovered and exploited by global botnets in minutes. 
 
-![Project Teardown](image_357b38.png)
-*Figure 5: Post-project cleanup: Decommissioning the entire resource group via PowerShell to ensure cost-control and security closure.*
 
-The entire environment was decommissioned via PowerShell (`Remove-AzResourceGroup`) to ensure total cost control and eliminate the residual security risks associated with the exposed infrastructure.
 
 ## Key Findings and Analysis
 - **Automation is Relentless**: The logs confirmed that these were not human actors, but automated botnets cycling through dictionary lists at a rate of multiple attempts per second.
