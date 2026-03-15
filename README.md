@@ -1,6 +1,6 @@
 # Azure Sentinel Honeynet (SSH Brute-Force Telemetry)
 
-A live **Azure cloud honeynet** that collects real-world SSH brute-force traffic and analyzes it using **Microsoft Sentinel**, **Log Analytics**, **Azure Monitor Agent (AMA)**, and **KQL**.
+A live Azure cloud honeynet that collects real-world SSH brute-force traffic and analyzes it using **Microsoft Sentinel**, **Log Analytics**, **Azure Monitor Agent (AMA)**, and **KQL**.
 
 ## What this project shows
 - Built a cloud logging pipeline: **Linux Syslog → AMA → Log Analytics → Sentinel**
@@ -8,19 +8,15 @@ A live **Azure cloud honeynet** that collects real-world SSH brute-force traffic
 - Used **KQL** to extract attacker IP patterns and visualize geography and volume
 - Documented a repeatable workflow: deploy → ingest → detect → investigate → report
 
----
-
 ## Scenario
 This lab simulates a realistic mistake: an engineer opens **Port 22 (SSH)** for troubleshooting and forgets to remove the rule.
 
-- **Target:** Ubuntu 22.04 VM with a public IP
-- **Misconfiguration:** permissive NSG rule (ex: `Danger_allow_all`)
-- **Observation window:** ~21 hours
-- **Result:** continuous, automated brute-force attempts from multiple regions
+- **Target:** Ubuntu 22.04 VM with a public IP  
+- **Misconfiguration:** permissive NSG rule (ex: `Danger_allow_all`)  
+- **Observation window:** ~21 hours  
+- **Result:** continuous, automated brute-force attempts from multiple regions  
 
 ![Deployment and NSG rule](RemoteSessionAZ.png)
-
----
 
 ## Tools & Technologies
 - **Cloud:** Microsoft Azure  
@@ -30,18 +26,14 @@ This lab simulates a realistic mistake: an engineer opens **Port 22 (SSH)** for 
 - **Querying:** KQL  
 - **Automation:** PowerShell (resource deployment)
 
-![AMA ingestion validation](AMA%20status%20check%20.png)
-
----
+![AMA ingestion validation](AMA_status_check.png)
 
 ## Implementation summary
-1. Deployed Azure resources (Resource Group, VM, NSG, Workspace)
-2. Enabled Syslog collection using **AMA**
-3. Connected the workspace to **Microsoft Sentinel**
-4. Queried and analyzed logs with **KQL**
-5. Built visualizations (map + top countries + volume trends)
-
----
+- Deployed Azure resources (Resource Group, VM, NSG, Workspace)
+- Enabled Syslog collection using AMA
+- Connected the workspace to Microsoft Sentinel
+- Queried and analyzed logs with KQL
+- Built visualizations (map + top countries + volume trends)
 
 ## Results (21-hour window)
 | Metric | Result |
@@ -54,23 +46,17 @@ This lab simulates a realistic mistake: an engineer opens **Port 22 (SSH)** for 
 
 ![Attack visualization](Map&Bar_chart21HRS.png)
 
----
-
 ## Evidence (raw logs + incidents)
-- Raw brute-force events in syslog:  
-  ![Syslog brute force evidence](BruteForceHoneynet-.png)
+**Raw brute-force events in syslog:**  
+![Syslog brute force evidence](BruteForceHoneynet-.png)
 
-- Sentinel incident/alert activity:  
-  ![Incident alerts](automated%20incident%20alerts.png)
-
----
+**Sentinel incident/alert activity:**  
+![Incident alerts](automated_incident_alerts.png)
 
 ## Key findings
 - **Exposure is discovered fast:** public SSH attracts automated scanning quickly
 - **Attacks are high-volume and automated:** consistent with botnet/dictionary behavior
 - **Dashboards accelerate triage:** geography + volume trends show patterns faster than raw logs alone
 
----
-
 ## Cleanup / safety note
-This lab intentionally exposed SSH to the public internet for observation. After data collection, resources should be **torn down** (delete the Resource Group) to stop exposure and avoid ongoing costs.
+This lab intentionally exposed SSH to the public internet for observation. After data collection, resources should be torn down (delete the Resource Group) to stop exposure and avoid ongoing costs.
