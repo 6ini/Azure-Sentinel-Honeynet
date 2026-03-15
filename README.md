@@ -1,6 +1,6 @@
 # Azure Sentinel Honeynet (SSH Brute-Force Telemetry)
 
-A live Azure cloud honeynet that collects real-world SSH brute-force traffic and analyzes it using **Microsoft Sentinel**, **Log Analytics**, **Azure Monitor Agent (AMA)**, and **KQL**.
+Live Azure SSH honeynet: ingested Syslog into Microsoft Sentinel (AMA/Log Analytics), generated alerts, and visualized global brute-force activity with KQL
 
 ## What this project shows
 - Built a cloud logging pipeline: **Linux Syslog → AMA → Log Analytics → Sentinel**
