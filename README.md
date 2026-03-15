@@ -2,7 +2,7 @@
 
 A live **Azure cloud honeynet** that collects real-world SSH brute-force traffic and analyzes it using **Microsoft Sentinel**, **Log Analytics**, **Azure Monitor Agent (AMA)**, and **KQL**.
 
-## What this project proves (SOC / Security Analyst relevance)
+## What this project shows
 - Built a cloud logging pipeline: **Linux Syslog → AMA → Log Analytics → Sentinel**
 - Validated detections using raw log evidence (failed SSH attempts at scale)
 - Used **KQL** to extract attacker IP patterns and visualize geography and volume
