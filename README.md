@@ -26,7 +26,7 @@ This lab simulates a realistic mistake: an engineer opens **Port 22 (SSH)** for 
 - **Querying:** KQL  
 - **Automation:** PowerShell (resource deployment)
 
-![AMA ingestion validation](AMA_status_check.png)
+![Incident alerts](automated%20incident%20alerts.png)
 
 ## Implementation summary
 - Deployed Azure resources (Resource Group, VM, NSG, Workspace)
