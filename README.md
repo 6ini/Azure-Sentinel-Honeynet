@@ -50,8 +50,6 @@ This lab simulates a realistic mistake: an engineer opens **Port 22 (SSH)** for 
 **Raw brute-force events in syslog:**  
 ![Syslog brute force evidence](BruteForceHoneynet-.png)
 
-**Sentinel incident/alert activity:**  
-![Incident alerts](automated_incident_alerts.png)
 
 ## Key findings
 - **Exposure is discovered fast:** public SSH attracts automated scanning quickly
